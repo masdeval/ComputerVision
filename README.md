@@ -1,1 +1,1 @@
-[Click Here](https://github.com/masdeval/ComputerVision/ClassifyingHandGestures.xhtml)
+[Click Here](https://github.com/masdeval/ComputerVision/blob/master/ClassifyingHandGestures.xhtml)
