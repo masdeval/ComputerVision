@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="GENERATOR" content="LyX 2.3.1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>Hand Gesture ClassificationWarning: Don't force a newline in manuscript mode. It won't compile. If you want to in jou or doc mode, that's fine.</title>
+<style type='text/css'>
+/* LyX Provided Styles */
+div.bibtexentry { margin-left: 2em; text-indent: -2em; }
+span.bibtexlabel:before{ content: "["; }
+span.bibtexlabel:after{ content: "] "; }
+
+/* Layout-provided Styles */
+div.title {
+font-size: xx-large;text-align: center;
+
+}
+div.shorttitle {
+font-style: normal;
+font-variant: small-caps;
+font-size: small;text-align: left;
+
+}
+span.shorttitle_label {
+font-weight: bold;
+font-style: normal;
+font-variant: normal;
+font-size: small;
+
+}
+div.author {
+font-style: italic;
+font-variant: normal;
+font-size: small;
+margin-top: 0.5ex;
+margin-bottom: 0.5ex;
+text-align: center;
+
+}
+div.leftheader {
+font-style: normal;
+font-variant: small-caps;
+font-size: small;text-align: left;
+
+}
+span.leftheader_label {
+font-weight: bold;
+font-style: normal;
+font-variant: small-caps;
+font-size: small;
+
+}
+div.affiliation {
+margin-top: 1.5ex;
+margin-bottom: 1ex;
+text-align: left;
+
+}
+span.affiliation_label {
+font-weight: bold;
+font-size: small;
+
+}
+div.abstract {
+font-size: small;
+margin-left: 3ex;
+margin-right: 3ex;
+text-align: left;
+
+}
+span.abstract_label {
+font-weight: bold;
+font-size: small;
+
+}
+div.keywords {
+font-size: small;
+margin-top: 0.8ex;
+margin-bottom: 0.8ex;
+margin-left: 3ex;
+margin-right: 3ex;
+text-align: left;
+
+}
+span.keywords_label {
+font-style: italic;
+font-variant: normal;
+font-size: small;
+
+}
+h2.section {
+font-weight: bold;
+font-size: xx-large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+
+}
+div.standard {
+margin-top: 1ex;
+margin-bottom: 1ex;
+text-align: left;
+
+}
+div.plain_layout {
+text-align: left;
+
+}
+h3.subsection {
+font-weight: bold;
+font-size: x-large;
+margin-top: 0.9ex;
+margin-bottom: 0.5ex;
+text-align: left;
+
+}
+h5.paragraph {
+font-weight: bold;
+font-size: medium;
+margin-top: 0.4ex;
+text-align: left;
+
+}
+div.itemize {
+margin-top: 0.7ex;
+margin-bottom: 0.7ex;
+margin-left: 3ex;
+text-align: left;
+
+}
+div.float {
+	border: 2px solid black;
+	text-align: center;
+}
+div.float-caption {
+	text-align: center;
+	border: 2px solid black;
+	padding: 1ex;
+	margin: 1ex;
+}
+span.foot_label {
+	vertical-align: super;
+	font-size: smaller;
+	font-weight: bold;
+	text-decoration: underline;
+}
+div.foot {
+	display: inline;
+	font-size: small;
+	font-weight: medium;
+	font-family: serif;
+	font-variant: normal;
+	font-style: normal;
+}
+div.foot_inner { display: none; }
+div.foot:hover div.foot_inner {
+	display: block;
+	border: 1px double black;
+	margin: 0em 1em;
+	padding: 1em;
+}
+table {
+	border-collapse: collapse;
+	display: inline-block;
+}
+td {
+	border: 1px solid black;
+	padding: 0.5ex;
+}
+
+
+</style>
+</head>
+<body dir="auto">
+<div class="title" id='magicparlabel-1'>Hand Gesture Classification</div>
+<div class="shorttitle" id='magicparlabel-6'><span class="shorttitle_label">Short title:</span> Learning methods to image classification</div>
+<div class="author" id='magicparlabel-7'>Christian Braz, Junior Ovince, Rahul Seti</div>
+<div class="leftheader" id='magicparlabel-8'><span class="leftheader_label">Left header:</span> Author</div>
+<div class="affiliation" id='magicparlabel-13'><span class="affiliation_label">Affiliation:</span> George Washington University
+<br />
+
+Department of Data Science</div>
+<div class="abstract" id='magicparlabel-14'><span class="abstract_label">Abstract:</span> Hand gesture recognition is the process of recognizing meaningful expressions of form and motion by a human involving only the hands. There are plenty of applications where hand gesture recognition can be applied for improving control, accessibility, communication and learning. In this work, we present our results in classifying twenty six hand signs for the letters of the alphabet. We conduct experiments using different convolutional neural networks architectures and report the performance of each of them. </div>
+<div class="keywords" id='magicparlabel-15'><span class="keywords_label">Keywords:</span> gesture recognition, machine learning, convolutional neural networks, deep learning</div>
+<h2 class="section" id='magicparlabel-16'>Introduction</h2>
+<div class="standard" id='magicparlabel-17'>Hand gestures provide a complementary modality for expressing ideas. It can be used in many different contexts to augment the human-machine interaction. For instance, it can help deaf people to communicate, send commands to a intelligent house system, and so on. There are mainly two ways to capture such interaction, via Data-Glove and vision approach <a href='#LyXCite-HandGestureRecognition'><span class="bib-abbrvciteauthor">Strezoski et al.</span></a> (<span class="bib-year">2018</span>). The Data-Glove based approach collects data from sensors attached to a glove mounted on the hand of the user. It is accurate and captures only the necessary information, which minimizes the amount of data. On the other hand, due to the necessary hardware, it is inconvenient and even infeasible in many scenarios. The vision approach has the advantage of the hardware simplicity, but requires a big amount of image data to be processed in the attempt to come up with a solution that is insensitive to adverse conditions like lightning, background invariant, subject, and camera independent.</div>
+
+<div class="standard" id='magicparlabel-18'>The American Sign Language (ASL) is a visual language that incorporates gestures, facial expressions, and body movements. Hand signs are the foundation of the language. Many signs are iconic, meaning the sign uses a visual image that resembles the concept it represents. The alphabet is an important series of signs. Some hand signs for letters resemble the written form of the respective letter. The American Manual Alphabet (AMA) is a manual alphabet that augments the vocabulary of American Sign Language (). When you use the hand signs for letters to spell out a word, you are &ldquo;fingerspelling&rdquo;, and in AMA this is one-handed. The American Manual Alphabet have often been used in deaf education and is composed by 26 hand positions to designate letters from A to Z, and 10 positions to represent the digits from 0 to 9. </div>
+
+<div class="standard" id='magicparlabel-23'>In this work we address the vision solution to the problem of classifying the 26 hand gesture positions for fingerspelling the letters of the alphabet. We hope that with this work we can contribute somehow to the development of practical computational innovative solutions for human-computer interaction. The rest of this paper is organized as follows. Related Work presents a review of general hand gesture recognition approaches and also works related to recognize the sign language. Literature Review briefly explains the main machine learning techniques that has been used so far to tackle this problem. More specifically, we describe four Convolutional Neural Network (CNN) models: LeNet5, AlexNet, VGG Net and GoogleLeNet. In the Methods section, our experiment is described, detailing the training approach, the dataset, and the models. Finally, we conclude our work and discuss future development in the Conclusion section. </div>
+
+
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-4630'><img style='width:50%;' src='9_home_christian_GWU_Machine_Learning_II_FinalProject_ASL_alphabet.png' alt='image: 9_home_christian_GWU_Machine_Learning_II_FinalProject_ASL_alphabet.png' />
+</div>
+
+<div class="plain_layout" id='magicparlabel-4632'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 1:  <a id="fig_ASL_alphabet" />
+American Sign Language alphabet.</span></div>
+
+
+</div>
+
+
+
+<h2 class="section" id='magicparlabel-29'>Related Work</h2>
+<div class="standard" id='magicparlabel-30'>Hand gestures recognition without having to wearing any extra device have been the target of many researches in the past years. Its applicability to enhancing human-computer interaction has use in many different domains such as video games, augmented reality, intelligent house system control, and in any case involving a 3D scenario. <a href='#LyXCite-ComparisonML_hand_gesture_recognition'><span class="bib-abbrvciteauthor">Trigueiros et al.</span></a> (<span class="bib-year">2012</span>) makes a comparative study of four algorithms (k-Nearest Neighbour (k-NN), Naïve Bayes (NB), Artificial Neural Network (ANN) and Support Vector Machines (SVM)) for static gesture recognition. They concluded that ANN had the best performance. </div>
+
+<div class="standard" id='magicparlabel-31'><a href='#LyXCite-HandGestureRecognition'><span class="bib-abbrvciteauthor">Strezoski et al.</span></a> (<span class="bib-year">2018</span>) point out how the advent of specialized hardware like the GPU's boosted some machine learning algorithms, giving rise to the Deep Learning architectures and paved the design of models with deep architectures. One such architecture is Convolutional Neural Networks (CNN), which have proven to be superior for many problems involving image processing. In their paper, they evaluate different efficient CNN architectures designed by industry leaders such as Google, IBM and Microsoft, in the problem of identifying hand signs from the Marcel dataset. </div>
+
+<div class="standard" id='magicparlabel-32'>Computer recognition of sign language is an important research problem for enabling communication with hearing impaired people. <a href='#LyXCite-Real_Time_ASL_CNN'><span class="bib-abbrvciteauthor">Garcia and Viesca</span></a> (<span class="bib-year">2016</span>) propose an ASL fingerspelling translator based on CNN. They build their solution upon the pre-trained GoogleLeNet using transfer learning and develop an ASL recognition system in real time to translate a video of a user’s ASL signs into text. <a href='#LyXCite-DeepCNN_ASL'><span class="bib-abbrvciteauthor">Bheda and Radpour</span></a> (<span class="bib-year">2017</span>) tackle the problem of automatic sign language recognition trying to make use of images with depth-sensing technology. These images, besides the regular pixels, have contour and depth information. </div>
+<h2 class="section" id='magicparlabel-33'>Literature Review</h2>
+<div class="standard" id='magicparlabel-34'>In this section we briefly describe the technologies related to this work. </div>
+<h3 class="subsection" id='magicparlabel-35'>Convolutional Neural Network </h3>
+<div class="standard" id='magicparlabel-36'>A Convolutional Neural Network (CNN) consists of a number of convolutional and pooling layers, optionally followed by fully connected layers. Convolution layers take inner product of the linear filter and the underlying image portion, usually followed by a nonlinear activation function at every local portion of the input. The resulting outputs are called feature maps. Its architecture is designed to take advantage of the 2D structure of an input image. The input to a convolutional layer is a <em>m x m x r</em> image where m is the height and width of the image, and r is the number of channels. A channel is a conventional term used to refer to a certain component of an image. A RGB image will have three channels – Red, Green and Blue – and we can imagine them as three 2D-matrices stacked over each other, one for each color, each having pixel values in the range 0 to 255. On the other hand, a grayscale image, has just one channel. The convolutional layer will have k filters (or kernels) of size <em>n x n x q</em> which convolve the image to produce k feature maps of size m−n+1. Thus, the purpose of convolutions is to extract features from the image. Each feature map can then be processed again by the pooling operator which reduces the dimensionality of each feature map while retains the most important information. The output from the convolutional and pooling layers represent high-level features of the input image. The higher levels layers are typically fully connected layers which are traditional Multi Layer Perceptron (MLP) whose purpose is to use these features for classifying the input image into various classes using a softmax activation function. These components are the basic building blocks of every Convolutional Neural Network and we can see a scheme of them in . </div>
+
+
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-3848'><img style='width:50%;' src='6_home_christian_GWU_Machine_Learning_II_FinalProject_convolutional.jpeg' alt='image: 6_home_christian_GWU_Machine_Learning_II_FinalProject_convolutional.jpeg' />
+</div>
+
+<div class="plain_layout" id='magicparlabel-3850'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 2:  <a id="fig_convolutional" />
+Convolutional Neural Network scheme.</span></div>
+
+
+</div>
+
+
+
+<h3 class="subsection" id='magicparlabel-46'>The LeNet architecture</h3>
+<div class="standard" id='magicparlabel-47'>In the seminal paper of 1994, Yann LeCun defined the first CNN named LeNet5. Among other things it was important for the insight that image features are distributed across the entire image, and convolutions, whose parameters could be learned, are an effective way to extract similar features at multiple location. At that time this was an revolutionary idea, and contrasted to using each pixel as a separate input of a large multi-layer neural network. LeNet5 explained that images are highly spatially correlated, and using individual pixel of the image as separate input features would not take advantage of these correlations. It was specially designed to recognize handwritten digit. It starts with an image of 32x32x1, then in the first step, six 5x5 filter with stride 1 resulting in a 28x28x 6 feature map. Then, an average pooling with a filter width of 2 and stride of 2 reduce the dimension by factor of 2 and end up with 14x14x6. Then another convolutional layer with sixteen 5x5 filter connected to another pooling layer yields a 5x5x16 map. The next layer is a fully connected layer with 120 nodes. The previous layer is 400 (5*5*16) dimensional is connected with 120 neurons. Finally, another layer with 84 nodes connect to the output layer with 10 neurons to predict the 10 digits. </div>
+<h3 class="subsection" id='magicparlabel-48'>AlexNet</h3>
+<div class="standard" id='magicparlabel-49'>AlexNet, winner of the ILSVRC-2010<div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-53'>ImageNet Large Scale Visual Recognition Challenge</div>
+</div></div>, used the insights provided by LeNet and build a much larger neural network that could be used to learn much more complex features. It consisted in a 11x11, 5x5, 3x3, convolutions, max pooling, dropout, and ReLU activations after every convolutional and fully-connected layer. AlexNet was trained on two Nvidia Geforce GTX 580 GPUs which in turn allowed the use of larger datasets and also bigger images.</div>
+
+
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-3822'><img style='width:50%;' src='7_home_christian_GWU_Machine_Learning_II_FinalProject_alexnet.png' alt='image: 7_home_christian_GWU_Machine_Learning_II_FinalProject_alexnet.png' />
+</div>
+
+<div class="plain_layout" id='magicparlabel-3824'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 3:  AlexNet.</span></div>
+
+
+</div>
+
+
+
+<h3 class="subsection" id='magicparlabel-59'>VGG Net</h3>
+<div class="standard" id='magicparlabel-60'>In <a href='#LyXCite-VeryDeepCNN_VGGNet'><span class="bib-abbrvciteauthor">Simonyan and Zisserman</span></a> (<span class="bib-year">2014</span>) the authors describe their work where they propose employing much more layers with much smaller filter sizes. &ldquo;We fix other parameters of the architecture, and steadily increase the depth of the network by adding more convolutional layers, which is feasible due to the use of very small (3×3) convolution filters in all layers. Max-pooling is performed over a 2×2 pixel window, with stride 2 .&rdquo;. Stacking three 3x3 convolutional layers without pooling between them, has an effective receptive field of using just a single 7x7 one, with the advantage of incorporating three non-linear rectification layers instead of a single one, which makes the decision function more discriminative while reducing the number of parameters. They train over 224x224 RGB images using networks weights from 11 to 19 layers architectures, varying from 133 to 144 million parameters. They claim that they have the best general approach for image feature extraction and that its model &ldquo;out performs GoogleLeNet in terms of the single-network classification accuracy&rdquo;.</div>
+<h3 class="subsection" id='magicparlabel-61'>GoogleLeNet</h3>
+<div class="standard" id='magicparlabel-62'>In the aim of creating even deeper architectures while keeping the computational cost constant, the Google team (<a href='#LyXCite-GoogleLeNet'><span class="bib-abbrvciteauthor">Szegedy et al.</span></a> (<span class="bib-year">2014</span>)) devised a 22-layer deep architecture inspired by the Network In Network idea. </div>
+
+<div class="standard" id='magicparlabel-63'>Network In Network (NIN) () is an approach proposed by <a href='#LyXCite-NetworkInNetwork'><span class="bib-abbrvciteauthor">Lin et al.</span></a> (<span class="bib-year">2013</span>) in order to increase the representational power of neural networks. The authors argue that conventional CNN &ldquo;implicitly makes the assumption that the latent concepts are linearly separable, and then use the generalized linear model (GLM) as convolutional filters&rdquo;. They claim that this does not allow a good abstraction level, and that replacing GLM with a more potent nonlinear function approximator can improve the abstraction capability of the model. Thus, in the NIN, the GLM is replaced with a general nonlinear function approximator, which in this case is the Multilayer Perceptron (MLP), known as a universal function approximator. The feature maps are obtained by sliding the MLP over the input in a similar manner as CNN and then the resulting output is fed into the next layer. The name is due by the fact that there are &ldquo;micro networks&rdquo;, each consisting of multiple fully connected layers with nonlinear activation functions, which are composing elements of the overall deep network. The output layer of these micro MLP's define the number of channels of the next layer. They called this new type of layer <em>mlpconv.</em></div>
+
+
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-3539'><img style='width:50%;' src='8_home_christian_GWU_Machine_Learning_II_FinalProject_NetworkInNetwork.png' alt='image: 8_home_christian_GWU_Machine_Learning_II_FinalProject_NetworkInNetwork.png' />
+</div>
+
+<div class="plain_layout" id='magicparlabel-3812'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4:  <a id="fig_Network_In_Network" />
+Comparison of linear convolution layer (left) and NiN layer (right).</span></div>
+
+
+</div>
+
+
+
+
+<div class="standard" id='magicparlabel-73'>The NiN method can be viewed as additional 1×1 convolutional layers: &ldquo;The cross channel parametric pooling layer is also equivalent to a convolution layer with 1x1 convolution kernel.&rdquo;. Given a 3D input volume, some transformation will be applied for each element of the grid over its depth component (cross channel). The output size of each transformation defines the depth component of the next volume. We can easily note that, besides the gain of having a more flexible way of combining cross channel elements, we can also achieve a significant reduction of the final volume overall dimension. </div>
+
+<div class="standard" id='magicparlabel-74'>GoogleLeNet makes use of this idea to create the Inception modules. Roughly speaking, each inception module is a stack of different feature maps, all with the same width and height, and using 1×1 convolutions to compute reductions before the expensive 3×3 and 5×5 convolutions. &ldquo;This allows for not just increasing the depth, but also the width of networks without significant performance penalty.&rdquo; claim the authors. Thus, in GoogleLeNet, NiN is used mainly as dimension reduction to remove computational bottlenecks that would otherwise limit the size of networks.</div>
+
+<div class="standard" id='magicparlabel-75'>They were the winner of the ILSVRC 2014 competition. GoogleLeNet, which is the name of the team chosen for the competition and is a homage to Yann LeCun's pioneering LeNet 5 network, achieved a top-5 error rate of 6.67%. This is very close to human level performance. </div>
+
+
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-3026'><img style='width:50%;' src='5_home_christian_GWU_Machine_Learning_II_FinalProject_inception-module.png' alt='image: 5_home_christian_GWU_Machine_Learning_II_FinalProject_inception-module.png' />
+</div>
+
+<div class="plain_layout" id='magicparlabel-3028'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 5:  <a id="fig_Inception_module_" />
+Inception module.</span></div>
+
+
+</div>
+
+
+
+<h2 class="section" id='magicparlabel-81'>Methods</h2>
+<div class="standard" id='magicparlabel-82'>The method used to accomplish this project is divided into three main phases: pretraining, training, and post training. We implement various specific tasks in each phase.</div>
+<h5 class="paragraph" id='magicparlabel-83'>A. Pretraining </h5>
+<div class="standard" id='magicparlabel-84'>During the pretraining phase, we proceed to the data preprocessing and the choice of the neural networks. The data preprocessing includes 2 main components: </div>
+
+<div class="itemize" id='magicparlabel-85'><div class="itemize_item"><span class="itemize_label">•</span>
+Normalization: As the dataset was uploaded using ImageFolder package from pytorch, we applied a normalization of 0.5 in order to have all the values between minus and positive one.</div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+Split of the dataset: The dataset is organized in one folder including all the images folder, we had to split it into three sets: train, validation, and test set. A rate of 70/15/15 was applied to obtain respectively the different sets. We used sklearn train/test split module in order to keep the 29 classes balanced among the sets.</div>
+</div>
+<div class="standard" id='magicparlabel-87'>As the dataset is on image pattern recognition, convolutional neural network is the best neural network classification algorithm to use. As presented in the context, we use some of the most applied CNN architecture for image classification. We design a baseline model and adapt two existing CNN models: LeNet and AlexNet as this dataset does not seem to be a complex one. Table 1 summarizes the model architecture used: </div>
+
+
+
+
+<div class='float-table'><div class="plain_layout" style='text-align: center;' id='magicparlabel-92'><table><tbody><tr><td style ="width: 5cm;" align='center' valign='top'>
+
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-130'><b>Baseline</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-133'><b>LeNet</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-136'><b>AlexNet</b></div>
+</td>
+</tr><tr><td style ="width: 5cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-139'><b>Number of conv layers</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-142'>2 conv (5,5)</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-145'>2 conv (5,5)</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-148'>5 conv (11,5,3,3,3)</div>
+</td>
+</tr><tr><td style ="width: 5cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-151'><b>Number of fully connected layers</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-154'>1 (250 neurons)</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-157'>2 (120,84 neurons)</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-160'>2 (4096,4096)</div>
+</td>
+</tr><tr><td style ="width: 5cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-163'><b>Layer output transfer function</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-166'>LogSoftmax</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-169'>Linear</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-172'>Linear</div>
+</td>
+</tr><tr><td style ="width: 5cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-175'><b>Estimated number of parameters</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-178'>11M</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-181'>4.2 M</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-184'>103 M</div>
+</td>
+</tr><tr><td style ="width: 5cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-187'><b>Estimated number of feature maps</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-190'>230</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-193'>114</div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-196'>250 k</div>
+</td>
+</tr></tbody>
+</table>
+</div>
+
+<div class="plain_layout" id='magicparlabel-197'><span class='float-caption-Standard float-caption float-caption-standard'>Table 1:  Summary of the Network architecture used.</span></div>
+
+
+</div>
+
+<h5 class="paragraph" id='magicparlabel-203'>B. Training</h5>
+<div class="standard" id='magicparlabel-204'>In the training phase we use two main categories of tools. The first category is the fundamental one and includes the definition of the training algorithm and the performance index function. The second one is to improve the overall performance of the models in order to reduce possible cases of overfitting and underfitting. </div>
+
+<div class="standard" id='magicparlabel-205'>For the performance index, we use cross entropy as we want to find a probability distribution for this multiclass image classification problem. For the training algorithm, we use Adam optimizer, which is a robust variant of the general stochastic gradient algorithm. </div>
+
+<div class="standard" id='magicparlabel-206'>The second category includes practices to improve the convergence of the algorithm and the general performance of the model. So, we use Xavier Normal initialization for the convolutional layers and a scheduler to update the rate when the losses are constant. We also use dropout nodes and early stopping to prevent overfitting. In general, the different models were trained using a total of 20 epochs. </div>
+<h5 class="paragraph" id='magicparlabel-207'>C. Post training</h5>
+<div class="standard" id='magicparlabel-208'>For the post training, we use the classic metrics such as confusion matrix, precision, recall, f-score, AUC and ROC. We also calculate the error parameters and the processing time in order to assess the quality of the different model performances. </div>
+
+<div class="standard" id='magicparlabel-209'>We use pytorch and tensorboard to run all the models. </div>
+<h2 class="section" id='magicparlabel-210'>Results</h2>
+<div class="standard" id='magicparlabel-211'>This section presents the result of each model. </div>
+<h5 class="paragraph" id='magicparlabel-212'>1. Baseline</h5>
+<div class="standard" id='magicparlabel-213'>After running 20 epochs on the baseline model, we obtained the following trends for the losses and accuracies (Figure <a href="#fig_Left__accuracy_trends">6</a>): </div>
+
+
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-218'><img style='width:30%;' src='0_home_christian_GWU_Machine_Learning_II_FinalProject_Figure1.png' alt='image: 0_home_christian_GWU_Machine_Learning_II_FinalProject_Figure1.png' />
+<img style='width:30%;' src='1_home_christian_GWU_Machine_Learning_II_FinalProject_Figure2.png' alt='image: 1_home_christian_GWU_Machine_Learning_II_FinalProject_Figure2.png' />
+</div>
+
+<div class="plain_layout" id='magicparlabel-219'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 6:  <a id="fig_Left__accuracy_trends" />
+Left, accuracy trends for the baseline model over 20 epochs. Right, Loss trends for the baseline model over 20 epochs.</span></div>
+</div>
+
+
+<div class="standard" id='magicparlabel-224'>The trends indicate that the model performs well at the 10th epoch and does not learn anything from that point one and even tend to overfit. We run the model with epoch and compare the result as presented in Table <a href="#tab_Baseline_Model_Summary">2</a>:</div>
+
+
+
+
+<div class='float-table'><div class="plain_layout" style='text-align: center;' id='magicparlabel-229'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-266'><b>Metrics</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-269'><b>Initial </b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-272'><b>Final</b></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-275'><b>Precision</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-278'>0.99595</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-281'>0.9916846</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-284'><b>Recall/Accuracy</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-287'>0.99593</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-290'>0.9916475</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-293'><b>F-score</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-296'>0.99594</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-299'>0.9916470</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-302'><b>AUC</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-305'>All greater than 0.9999</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-308'>All greater than 0.9998</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-311'><b>Processing Time</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-314'>36 minutes</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-317'>19 minutes</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-320'><b>Error</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-323'>std = 0.000649517 mean = 0.000641096 </div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-326'>std= 0.0007859 mean= 0.00096642</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-329'><b>Updated at epoch </b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-332'>12 and 18</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-335'>None</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-338'><b>Stopped at epoch</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-341'>20</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-344'>10</div>
+</td>
+</tr></tbody>
+</table>
+</div>
+
+<div class="plain_layout" id='magicparlabel-345'><span class='float-caption-Standard float-caption float-caption-standard'>Table 2:  <a id="tab_Baseline_Model_Summary" />
+Baseline Model Summary Results</span></div>
+
+
+</div>
+
+<h5 class="paragraph" id='magicparlabel-351'>2. LeNet</h5>
+<div class="standard" id='magicparlabel-352'>The same trend analysis on the loss and accuracy on the LeNet model shows that the model tends to overfit at the 4th epoch. So, we compare the result of models with 20 and 4 epochs and conclude that four is the number of epochs to adopt (Figure <a href="#fig_Left__loss_trends">7</a>). </div>
+
+
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-357'><img style='width:20%;' src='2_home_christian_GWU_Machine_Learning_II_FinalProject_Figure3.png' alt='image: 2_home_christian_GWU_Machine_Learning_II_FinalProject_Figure3.png' />
+<img style='width:20%;' src='3_home_christian_GWU_Machine_Learning_II_FinalProject_Figure4.png' alt='image: 3_home_christian_GWU_Machine_Learning_II_FinalProject_Figure4.png' />
+</div>
+
+<div class="plain_layout" id='magicparlabel-358'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 7:  <a id="fig_Left__loss_trends" />
+Left, loss trends for the LeNet model over 20 epochs. Right, accuracy trends for the LeNet model over 20 epochs.</span></div>
+</div>
+
+
+<div class="standard" id='magicparlabel-363'>The summary of our results is presented in Table <a href="#tab_LeNet_Model_Summary">3</a>.</div>
+
+
+
+
+<div class='float-table'><div class="plain_layout" style='text-align: center;' id='magicparlabel-368'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-405'><b>Metrics</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-408'><b>Initial</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-411'><b>Final</b></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-414'><b>Precision</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-417'>0.996112</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-420'>0.976701</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-423'><b>Recall / Accuracy</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-426'>0.996091</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-429'>0.975785</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-432'><b>F-score</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-435'>0.996091</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-438'>0.975852</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-441'><b>AUC</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-444'>All greater than 0. 9801</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-447'>All greater than 0.9603 </div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-450'><b>Processing Time</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-453'>30 minutes</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-456'>7 minutes</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-459'><b>Error</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-462'>std = 0.00081509  mean = 0.0009158</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-465'>std= 0.0008129 mean= 0.002219 </div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-468'><b>Updated at epoch</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-471'>None</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-474'>None</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-477'><b>Stopped at epoch</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-480'>20</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-483'>4</div>
+</td>
+</tr></tbody>
+</table>
+</div>
+
+<div class="plain_layout" id='magicparlabel-484'><span class='float-caption-Standard float-caption float-caption-standard'>Table 3:  <a id="tab_LeNet_Model_Summary" />
+LeNet Model Summary Results</span></div>
+
+
+</div>
+
+<h5 class="paragraph" id='magicparlabel-490'>3. AlexNet</h5>
+<div class="standard" id='magicparlabel-491'>The AlexNet is designed to be implemented for complex model with a dataset of hundreds even thousands of classes. However, the LeNet results show that our problem is simpler and a two convolutional layer network with thousands of parameters should be able to fit this classification problem. Furthermore, the AlexNet is time consuming. For the two main reasons, we decided to run the AlexNet architecture on only five epochs. Even then, the model tends to overfit and takes 45minutes to complete the learning. Table <a href="#tab_AlexNet_Model_Summary">4</a> brings more details. </div>
+
+
+
+
+<div class='float-table'><div class="plain_layout" style='text-align: center;' id='magicparlabel-496'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-523'><b>Metrics</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-526'><b>Initial</b></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-529'><b>Precision</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-532'>0.989630</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-535'><b>Recall / Accuracy</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-538'>0.989272</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-541'><b>F-score</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-544'>0.989259</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-547'><b>AUC</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-550'>All greater than 0.9949</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-553'><b>Processing Time</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-556'>44 minutes</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-559'><b>Error</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-562'>std = 0.0004457 mean = 0.0007320</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-565'><b>Updated at epoch</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-568'>None</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-571'><b>Stopped at epoch</b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-574'>5</div>
+</td>
+</tr></tbody>
+</table>
+</div>
+
+<div class="plain_layout" id='magicparlabel-575'><span class='float-caption-Standard float-caption float-caption-standard'>Table 4:  <a id="tab_AlexNet_Model_Summary" />
+AlexNet Model Summary Results</span></div>
+
+
+</div>
+
+<h5 class="paragraph" id='magicparlabel-581'>4. Model Testing</h5>
+<div class="standard" id='magicparlabel-582'>We use the baseline and LeNet models to test their performance on the test set. The trend stays the same as the baseline model gives a higher accuracy with 10 epochs and the LeNet model performs better in time. The trade-off time/accuracy is a classic one in data science. One might prefer the LeNet model for a translation application where time is more important. Other might prefer the baseline model for a tagging application such as Facebook where the time is less important. Our sense indicates that the model is a combination of the two architectures (Table <a href="#tab_Model_testing_summary_">5</a>).</div>
+
+
+
+
+<div class='float-table'><div class="plain_layout" style='text-align: center;' id='magicparlabel-587'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-621'><b>Metrics</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-624'><b>Baseline- 10 epochs</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-627'><b>LeNet – 4epochs</b></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-630'><b>Precision</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-633'>0.9902369</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-636'>0.9794684</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-639'><b>Recall / Accuracy</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-642'>0.9901915</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-645'>0.9786973</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-648'><b>F-score</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-651'>0.9901984</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-654'>0.9787579</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-657'><b>AUC</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-660'>All greater than 0.9998</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-663'>All greater than 0.9596</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-666'><b>Processing Time</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-669'>18 minutes</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-672'>7 minutes</div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-675'><b>Error</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-678'>std = 0.0007808 mean = 0.000998</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-681'>std = 0.000858553 mean = 0.00224975 </div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-684'><b>Classes with lowest accuracy</b></div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-687'>S, A, B, del</div>
+</td>
+<td style ="width: 4cm;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-690'>G, P, Space, B</div>
+</td>
+</tr></tbody>
+</table>
+</div>
+
+<div class="plain_layout" id='magicparlabel-691'><span class='float-caption-Standard float-caption float-caption-standard'>Table 5:  <a id="tab_Model_testing_summary_" />
+Model testing summary.</span></div>
+
+
+</div>
+
+<h2 class="section" id='magicparlabel-697'>Conclusion</h2>
+<div class="standard" id='magicparlabel-698'>In this project, we focus on comparing different CNN architectures as it is the first assignment to do in any machine learning application. The different model results show that the dataset requires a not complex architecture such as AlexNet to classify the images. A two convolutional layer network seems to perform well. The baseline model outperforms the LeNet model in performance whereas the latter only needs seven minutes to classify the images at almost 98% accuracy. A combination of the two architectures can help find the ground truth of this dataset. One might also consider an ensemble model for this pattern recognition. We did very few hyperparameters tuning. A small change in the number of neurons and the batch size can improve the result. Other hyperparameters such as weight regularization can also be fine tuned. </div>
+
+
+
+<div class="standard" id='magicparlabel-704'><h2 class='bibtex'>References</h2><div class='bibtex'><div class='bibtexentry' id='LyXCite-DeepCNN_ASL'><span class='bibtexlabel'>Bheda and Radpour 2017</span><span class='bibtexinfo'><span class="bib-fullnames:author">Bheda, Vivek and Radpour, Dianna</span>, "<span class="bib-title">Using Deep Convolutional Networks for Gesture Recognition in American Sign Language</span>", <i><span class="bib-journal">CoRR</span></i>  <span class="bib-volume">abs/1710.06836</span> (<span class="bib-year">2017</span>).</span></div>
+<div class='bibtexentry' id='LyXCite-Real_Time_ASL_CNN'><span class='bibtexlabel'>Garcia and Viesca 2016</span><span class='bibtexinfo'><span class="bib-fullnames:author">Garcia, Brandon and Viesca, Sigberto</span>, "<span class="bib-title">Real-time American Sign Language Recognition with Convolutional Neural Networks</span>", in <i><span class="bib-booktitle">In Convolutional Neural Networks for VisualRecognition</span></i> (<span class="bib-publisher">Stanford</span>, <span class="bib-year">2016</span>).</span></div>
+<div class='bibtexentry' id='LyXCite-NetworkInNetwork'><span class='bibtexlabel'>Lin et al. 2013</span><span class='bibtexinfo'><span class="bib-fullnames:author">Lin, Min, Chen, Qiang, and Yan, Shuicheng</span>, "<span class="bib-title">Network In Network</span>", <i><span class="bib-journal">CoRR</span></i>  <span class="bib-volume">abs/1312.4400</span> (<span class="bib-year">2013</span>).</span></div>
+<div class='bibtexentry' id='LyXCite-VeryDeepCNN_VGGNet'><span class='bibtexlabel'>Simonyan and Zisserman 2014</span><span class='bibtexinfo'><span class="bib-fullnames:author">Simonyan, Karen and Zisserman, Andrew</span>, "<span class="bib-title">Very Deep Convolutional Networks for Large-Scale Image Recognition</span>", <i><span class="bib-journal">CoRR</span></i>  <span class="bib-volume">abs/1409.1556</span> (<span class="bib-year">2014</span>).</span></div>
+<div class='bibtexentry' id='LyXCite-HandGestureRecognition'><span class='bibtexlabel'>Strezoski et al. 2018</span><span class='bibtexinfo'><span class="bib-fullnames:author">Strezoski, Gjorgji, Stojanovski, Dario, Dimitrovski, Ivica, and Madjarov, Gjorgji</span>, "<span class="bib-title">Hand Gesture Recognition Using Deep Convolutional Neural Networks</span>", in <i><span class="bib-booktitle">ICT Innovations 2016</span></i> (<span class="bib-address">Cham</span>: <span class="bib-publisher">Springer International Publishing</span>, <span class="bib-year">2018</span>), pp. <span class="bib-pages">49--58</span>.</span></div>
+<div class='bibtexentry' id='LyXCite-GoogleLeNet'><span class='bibtexlabel'>Szegedy et al. 2014</span><span class='bibtexinfo'><span class="bib-fullnames:author">Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet, Pierre, Reed, Scott E., Anguelov, Dragomir, Erhan, Dumitru, Vanhoucke, Vincent, and Rabinovich, Andrew</span>, "<span class="bib-title">Going Deeper with Convolutions</span>", <i><span class="bib-journal">CoRR</span></i>  <span class="bib-volume">abs/1409.4842</span> (<span class="bib-year">2014</span>).</span></div>
+<div class='bibtexentry' id='LyXCite-ComparisonML_hand_gesture_recognition'><span class='bibtexlabel'>Trigueiros et al. 2012</span><span class='bibtexinfo'><span class="bib-fullnames:author">Trigueiros, P., Ribeiro, F., and Reis, L. P.</span>, "<span class="bib-title">A comparison of machine learning algorithms applied to hand gesture recognition</span>", in <i><span class="bib-booktitle">7th Iberian Conference on Information Systems and Technologies (CISTI 2012)</span></i> (<span class="bib-publisher"></span>, <span class="bib-year">2012</span>), pp. <span class="bib-pages">1-6</span>.</span></div>
+</div></div>
+</body>
+</html>
